@@ -12,13 +12,19 @@ roots = nthroot_mod(1, 16, 1152921504606846577, all_roots=True)
 
 # input = np.matrix([[248624671961015766, 104064564287205047, 186556200519391708, 183365194556609938], [203434914383328712, 56598977939943515, 26767075655198788, 274583609827135228] ])
 modulus = 288230376151748609
-input_NO = [248624671961015766, 104064564287205047, 186556200519391708, 183365194556609938, 203434914383328712, 56598977939943515, 26767075655198788, 274583609827135228 ]
+# input_NO = [248624671961015766, 104064564287205047, 186556200519391708, 183365194556609938, 203434914383328712, 56598977939943515, 26767075655198788, 274583609827135228 ]
 # input = np.matrix([[248624671961015766, 104064564287205047],[186556200519391708, 183365194556609938],[203434914383328712, 56598977939943515],[26767075655198788, 274583609827135228]])
 root8 = 14110678920874275
 
 
+
+#32-bit
+# modulus=4294965137
+# input_NO = [2453162314, 1899476144, 1000432799, 2194883175, 3639307543, 861448360, 2501107788, 569624628]
+# root8 = 499988992
+
 # modulus = 288
-# input_NO = [0,1, 2, 3, 4, 5, 6, 7 ]
+input_NO = [0,1, 2, 3, 4, 5, 6, 7 ]
 # root8 = 5
 
 my_roots_8 = []
@@ -115,23 +121,23 @@ print(25*"*"+ "W3mult"+25*"*")
 print((W3mult.flatten()).tolist())
 print(75*"*")
 
-# result0 = input_NO[0] % modulus 
-# print(result0)
-# result1 = (input_NO[1]*my_roots_8[15]) % modulus
-# print(result1)
-# result2 = (input_NO[2]*my_roots_8[14]) % modulus
-# print(result2)
-# result3 = (input_NO[3]*my_roots_8[13]) % modulus
-# print(result3)
-# result4 = (input_NO[4]*my_roots_8[12]) % modulus
-# print(result4)
-# result5 = (input_NO[5]*my_roots_8[11]) % modulus
-# print(result5)
-# result6 = (input_NO[6]*my_roots_8[10]) % modulus
-# print(result6)
-# result7 = (input_NO[7]*my_roots_8[9]) % modulus
-# print(result7)
-# print("A7 By using only my_roots_8 is the sum of the above")
+result0 = input_NO[0] % modulus 
+print(result0)
+result1 = (input_NO[1]*my_roots_8[15]) % modulus
+print(result1)
+result2 = (input_NO[2]*my_roots_8[14]) % modulus
+print(result2)
+result3 = (input_NO[3]*my_roots_8[13]) % modulus
+print(result3)
+result4 = (input_NO[4]*my_roots_8[12]) % modulus
+print(result4)
+result5 = (input_NO[5]*my_roots_8[11]) % modulus
+print(result5)
+result6 = (input_NO[6]*my_roots_8[10]) % modulus
+print(result6)
+result7 = (input_NO[7]*my_roots_8[9]) % modulus
+print(result7)
+print("A7 By using only my_roots_8 is the sum of the above")
 # result = input_NO[0] % modulus 
 # result += input_NO[1]*my_roots_8[1] % modulus
 # result += input_NO[2]*my_roots_8[2] % modulus
@@ -164,6 +170,7 @@ m = 1  # Initialize m
 n = 8
 t = n
 RoU_array_BO = bit_reverse(my_roots_8[0:8])
+# RoU_array_BO = [1, 0, 4045668352, 0, 499988992, 0, 671088640, 0]
 output = [0,0,0,0,0,0,0,0]
 while m < n:
     t = t >> 1  # Integer division by 2
